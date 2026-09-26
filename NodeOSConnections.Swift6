@@ -1,0 +1,11 @@
+///Isolation
+Ban traffic outside network.
+Use coherent IPV6 servers.
+Run on isolated network without backends.
+First layer is I2P, MaxedOut.
+Third layer Fidiro VPN.
+
+///Connection settings.
+Only IPV6.
+Strict Double NAT.
+No MAC adress.
