@@ -7,7 +7,4 @@ Third layer Fidiro VPN.
 
 ///Connection settings.
 My private network()
-%ghz lane()
-Only IPV6.
-Strict Double NAT.
-No MAC adress.
+ZX lane()
