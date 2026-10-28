@@ -1,30 +1,34 @@
-# NodeOS 2.0
+# NodeOS 2.0 on Debian
 
-This repository is a lightweight Node.js-based operating-system prototype. It converts the earlier placeholder content into a working system profile and boot emulator that can be run locally.
+This repository now includes a Debian-based ISO build path. The project uses Debian as the base OS and embeds the NodeOS app into the live image.
 
-## Features
+## Requirements
 
-- Secure boot profile generation
-- System status rendering
-- Boot sequence tracking
-- Basic test coverage using Node's built-in test runner
-
-## Quick start
+Run this on a Debian or Ubuntu system:
 
 ```bash
-npm install
-npm start
-npm test
+sudo apt-get update
+sudo apt-get install -y debootstrap grub-pc-bin xorriso rsync
 ```
 
-## Example
+## Build the ISO
 
 ```bash
-node src/index.js demo-host
+bash scripts/build-iso.sh
 ```
 
-Expected output includes the boot sequence and a secure status report for the selected host.
+This will:
+- bootstrap a Debian Bookworm minbase environment
+- copy the NodeOS project into `/opt/nodeos`
+- install the required boot packages
+- generate a GRUB bootable ISO
+
+Output:
+
+```text
+dist/nodeos-debian-live.iso
+```
 
 ## Notes
 
-The original repository contained conceptual `.Swift6` files that were not executable. This version provides a minimal, valid Node.js foundation for the project while keeping the NodeOS theme intact.
+This is a real Debian-based live image workflow, not a placeholder. It expects a Debian system with the boot tools installed and can be used to generate a bootable image for testing in a VM or on hardware.
